@@ -4,7 +4,7 @@
 
 Держит диалог в памяти, вызывает инструменты и возвращает ответ строго списком фактов.
 
-## Что внутри
+## Функционал и особенности
 
 - модель `gpt-4o-mini` через ProxyAPI
 - системный промпт эксперта по разведению кошек
@@ -22,16 +22,32 @@
 
 ## Запуск
 
+Создайте виртуальное окружение и установите зависимости.
+
+**Windows (PowerShell):**
+
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-copy .env.example .env
 ```
 
-В `.env` укажи ключ ProxyAPI. Затем:
+**macOS / Linux:**
 
-```powershell
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Скопируйте файл окружения:
+
+- Windows (cmd): `copy .env.example .env`
+- macOS / Linux: `cp .env.example .env`
+
+В `.env` укажите ключ ProxyAPI. Затем:
+
+```bash
 python main.py
 ```
 
@@ -41,7 +57,7 @@ python main.py
 2. тот же `thread_id` — агент вспоминает предыдущую породу;
 3. пользователь `2` в новом диалоге запрашивает факты и заметки по разведению.
 
-## Структура
+## Структура проекта
 
 ```
 ├── main.py
